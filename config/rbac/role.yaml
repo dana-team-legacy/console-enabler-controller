@@ -1,0 +1,73 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - services
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hyper-console-controller.dana.io
+  resources:
+  - deployment
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hyper-console-controller.dana.io
+  resources:
+  - hyperconsolecontrollers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - hyper-console-controller.dana.io
+  resources:
+  - hyperconsolecontrollers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - hyper-console-controller.dana.io
+  resources:
+  - hyperconsolecontrollers/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - hypershift.openshift.io
+  resources:
+  - HostedCluster
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
