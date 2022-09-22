@@ -63,6 +63,7 @@ type NamespacePredicate struct {
 // +kubebuilder:rbac:groups=hyper-console-controller.dana.io,resources=deployment,verbs=get;list;watch;update;patch
 //+kubebuilder:rbac:groups="",resources=services,verbs=get;list;patch;update;watch
 //+kubebuilder:rbac:groups="",resources=secrets,verbs=get;list;patch;update;watch
+//+kubebuilder:rbac:groups="",resources=routes,verbs=get;list;patch;update;watch
 //+kubebuilder:rbac:groups="hypershift.openshift.io",resources=HostedCluster,verbs=get;list;patch;update;watch
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
