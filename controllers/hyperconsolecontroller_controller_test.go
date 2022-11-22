@@ -1,17 +1,18 @@
 package controllers
 
 import (
+	"console-enabler-controller/utills"
 	"context"
+	"reflect"
+	"testing"
+
 	routev1 "github.com/openshift/api/route/v1"
-	"hyper-console-controller/utills"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
-	"reflect"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"
-	"testing"
 )
 
 func TestHyperConsoleControllerReconciler_CreateHttpsService(t *testing.T) {

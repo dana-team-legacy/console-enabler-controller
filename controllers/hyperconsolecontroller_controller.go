@@ -17,11 +17,14 @@ limitations under the License.
 package controllers
 
 import (
+	"console-enabler-controller/utills"
 	"context"
 	"encoding/json"
 	"fmt"
+	"reflect"
+	"strings"
+
 	routev1 "github.com/openshift/api/route/v1"
-	"hyper-console-controller/utills"
 	corev1 "k8s.io/api/core/v1"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
@@ -33,7 +36,6 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
-	"reflect"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/event"
@@ -41,7 +43,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/predicate"
 	"sigs.k8s.io/controller-runtime/pkg/source"
-	"strings"
 )
 
 var clientset *kubernetes.Clientset
@@ -57,10 +58,10 @@ type NamespacePredicate struct {
 	predicate.Funcs
 }
 
-//+kubebuilder:rbac:groups=hyper-console-controller.dana.io,resources=hyperconsolecontrollers,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=hyper-console-controller.dana.io,resources=hyperconsolecontrollers/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=hyper-console-controller.dana.io,resources=hyperconsolecontrollers/finalizers,verbs=update
-// +kubebuilder:rbac:groups=hyper-console-controller.dana.io,resources=deployment,verbs=get;list;watch;update;patch
+//+kubebuilder:rbac:groups=console-enabler-controller.dana.io,resources=hyperconsolecontrollers,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=console-enabler-controller.dana.io,resources=hyperconsolecontrollers/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=console-enabler-controller.dana.io,resources=hyperconsolecontrollers/finalizers,verbs=update
+// +kubebuilder:rbac:groups=console-enabler-controller.dana.io,resources=deployment,verbs=get;list;watch;update;patch
 //+kubebuilder:rbac:groups="",resources=services,verbs=get;list;patch;update;watch
 //+kubebuilder:rbac:groups="",resources=secrets,verbs=get;list;patch;update;watch
 //+kubebuilder:rbac:groups="",resources=routes,verbs=get;list;patch;update;watch

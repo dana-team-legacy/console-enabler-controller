@@ -1,4 +1,4 @@
 ## Append samples you want in your CSV to this file as resources ##
 resources:
-- hyper-console-controller_v1alpha1_hyperconsolecontroller.yaml
+- console-enabler-controller_v1alpha1_hyperconsolecontroller.yaml
 #+kubebuilder:scaffold:manifestskustomizesamples

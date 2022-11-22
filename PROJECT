@@ -4,12 +4,12 @@ layout:
 plugins:
   manifests.sdk.operatorframework.io/v2: {}
   scorecard.sdk.operatorframework.io/v2: {}
-projectName: hyper-console-controller
-repo: hyper-console-controller
+projectName: console-enabler-controller
+repo: console-enabler-controller
 resources:
 - controller: true
   domain: dana.io
-  group: hyper-console-controller
+  group: console-enabler-controller
   kind: HyperConsoleController
   version: v1alpha1
 version: "3"

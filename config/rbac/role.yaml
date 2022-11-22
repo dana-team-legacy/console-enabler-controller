@@ -8,6 +8,16 @@ rules:
 - apiGroups:
   - ""
   resources:
+  - routes
+  verbs:
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
   - secrets
   verbs:
   - get
@@ -26,7 +36,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - hyper-console-controller.dana.io
+  - console-enabler-controller.dana.io
   resources:
   - deployment
   verbs:
@@ -36,7 +46,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - hyper-console-controller.dana.io
+  - console-enabler-controller.dana.io
   resources:
   - hyperconsolecontrollers
   verbs:
@@ -48,13 +58,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - hyper-console-controller.dana.io
+  - console-enabler-controller.dana.io
   resources:
   - hyperconsolecontrollers/finalizers
   verbs:
   - update
 - apiGroups:
-  - hyper-console-controller.dana.io
+  - console-enabler-controller.dana.io
   resources:
   - hyperconsolecontrollers/status
   verbs:
